@@ -1,0 +1,57 @@
+﻿@model IEnumerable<UOA.ForumData.Core.KeywordStatistic>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+ <!--Keyword Landing page information-->
+
+<div class="keywordanalysis-landingpage">
+    <div>
+        @Html.Label("This service displays top ") @System.Configuration.ConfigurationManager.AppSettings["maxKeyWordsToDisplay"] @Html.Label("  keywords having the highest ")
+    </div>
+    <div>@Html.Label(" number of occurences in the collected data")</div>
+    <div style="text-align:center" class="startbutton">
+        <button class="btn btn-info crawl-button" id="#MyID" text="View" title="ViewSatistics" onclick="return ViewSatistics(this, 'Analysing...', 'View');">View</button>
+
+    </div>
+
+    <div class="submit-progress hidden ">
+        <i class="fa fa-2x fa-spinner fa-spin"></i>
+        <label>Please wait while Analysing the Data...</label>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" language="javascript">
+
+    function ViewSatistics(ctl, msg, caption) {
+            $(ctl).prop("disabled", true).text(msg);
+            $("body").addClass("submit-progress-bg");
+            $(".submit-progress").removeClass("hidden");
+            $.ajax({
+                url: '@Url.Action("KeywordBasedContent", "Display")',
+                data: null,
+               
+            }).done(function () {
+                $(".submit-progress").addClass("hidden");
+                $(ctl).prop("disabled", false).text(caption);
+                window.location.href = "@Url.Action("KeywordBasedStatistics", "Display")";
+
+
+                return true;
+            });
+
+        }
+</script>
+

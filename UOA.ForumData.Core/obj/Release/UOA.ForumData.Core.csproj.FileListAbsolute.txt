@@ -1,0 +1,9 @@
+E:\Archana\UOA.ForumData.Analysis\UOA.ForumData.Core\bin\Release\UOA.ForumData.Core.dll.config
+E:\Archana\UOA.ForumData.Analysis\UOA.ForumData.Core\bin\Release\UOA.ForumData.Core.dll
+E:\Archana\UOA.ForumData.Analysis\UOA.ForumData.Core\bin\Release\UOA.ForumData.Core.pdb
+E:\Archana\UOA.ForumData.Analysis\UOA.ForumData.Core\bin\Release\EntityFramework.dll
+E:\Archana\UOA.ForumData.Analysis\UOA.ForumData.Core\bin\Release\EntityFramework.SqlServer.dll
+E:\Archana\UOA.ForumData.Analysis\UOA.ForumData.Core\bin\Release\EntityFramework.xml
+E:\Archana\UOA.ForumData.Analysis\UOA.ForumData.Core\bin\Release\EntityFramework.SqlServer.xml
+E:\Archana\UOA.ForumData.Analysis\UOA.ForumData.Core\obj\Release\UOA.ForumData.Core.dll
+E:\Archana\UOA.ForumData.Analysis\UOA.ForumData.Core\obj\Release\UOA.ForumData.Core.pdb

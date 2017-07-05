@@ -1,0 +1,9 @@
+E:\Archana\Keyword\SemanticLibrary\bin\Debug\UOA.ForumData.SemanticLibrary.dll
+E:\Archana\Keyword\SemanticLibrary\bin\Debug\UOA.ForumData.SemanticLibrary.pdb
+E:\Archana\Keyword\SemanticLibrary\obj\Debug\UOA.ForumData.SemanticLibrary.dll
+E:\Archana\Keyword\SemanticLibrary\obj\Debug\UOA.ForumData.SemanticLibrary.pdb
+E:\Archana\UOA.ForumData.Analysis\UOA.ForumData.SemanticLibrary\bin\Debug\UOA.ForumData.SemanticLibrary.dll
+E:\Archana\UOA.ForumData.Analysis\UOA.ForumData.SemanticLibrary\bin\Debug\UOA.ForumData.SemanticLibrary.pdb
+E:\Archana\UOA.ForumData.Analysis\UOA.ForumData.SemanticLibrary\obj\Debug\UOA.ForumData.SemanticLibrary.dll
+E:\Archana\UOA.ForumData.Analysis\UOA.ForumData.SemanticLibrary\obj\Debug\UOA.ForumData.SemanticLibrary.pdb
+E:\Archana\UOA.ForumData.Analysis\UOA.ForumData.SemanticLibrary\obj\Debug\UOA.ForumData.SemanticLibrary.csprojResolveAssemblyReference.cache

@@ -1,0 +1,5 @@
+C:\Users\Vishwa\Downloads\Keyword\SemanticLibrary\bin\Debug\SemanticLibrary.dll
+C:\Users\Vishwa\Downloads\Keyword\SemanticLibrary\bin\Debug\SemanticLibrary.pdb
+C:\Users\Vishwa\Downloads\Keyword\SemanticLibrary\obj\Debug\SemanticLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Vishwa\Downloads\Keyword\SemanticLibrary\obj\Debug\SemanticLibrary.dll
+C:\Users\Vishwa\Downloads\Keyword\SemanticLibrary\obj\Debug\SemanticLibrary.pdb

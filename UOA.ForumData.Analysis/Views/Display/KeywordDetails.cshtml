@@ -1,0 +1,37 @@
+﻿@model IEnumerable<UOA.ForumData.Core.KeywordStatistic>
+@{
+        ViewBag.Title = "KeywordDetails";
+}
+
+
+<!--More information of keywords-->
+<div class="keywordstat-table keywordstat-tableinfo"  style="margin-top:86px;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Keyword</th>
+                <th>Forum Name</th>               
+                <th>Number of Questions</th>
+                <th>Total Number of Occurences</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><span class="accordion-text">@item.KeyWord</span></td>
+                    <td>@item.ForumName</td>                                   
+                    <td>@item.NumberOfQuestions</td>
+                    <td>@item.KeywordOccurences</td>   
+                </tr>
+
+            }
+        </tbody>
+
+
+    </table>
+    <div style="text-align:center">
+        <input class="btn btn-info crawl-button" type="button" value="Go Back" onclick="location.href=
+                                '@Url.Action("KeywordBasedStatistics", "Display")'">
+    </div>
+    </div>

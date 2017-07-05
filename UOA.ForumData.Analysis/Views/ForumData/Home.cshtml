@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+<h2>Home</h2>
+<div id="homepage">
+    <div class="home-heading">
+        @Html.Label("Welcome to the Contoso Service Hub")
+    </div>
+    <div class="component">
+        <button class="webcrawl" value="Web Crawl" onclick="location.href='@Url.Action("Index", "Crawler")'">
+            <img src="~/Content/Images/crawl.png" />
+        </button>
+        <div style="position:relative; margin-right: 73px">@Html.Label("Web Crawling: Performs a crawl on the xero community forum") </div>
+    </div>
+    <div class="component">
+
+        <button class="viewresult" value="Exhibits" onclick="location.href='@Url.Action("Index", "Analyser")'">
+            <img src="~/Content/Images/viewresult.png" />
+        </button>
+        <div style="position:relative; margin-right: -36px">@Html.Label("View Results: Demonstrates the crawled data  from the xero community forum")</div>
+
+    </div>
+    <div class="component">
+
+
+        <button class="analysis" value="Keyword Analysis" onclick="location.href='@Url.Action("Index","Display")'">
+            <img src="~/Content/Images/keyword.png" />
+        </button>
+        <div style="position:relative; margin-right: 29px">@Html.Label("Keyword Analysis: Investigates the data based on the NLP algorithm")</div>
+
+    </div>
+
+
+
+</div>
+

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<UOA.ForumData.Core.ForumDetail>
+    @{
+        ViewBag.Title = "BeginCrawl";
+    }
+<!-- Crawler Landing Page-->
+    <div class="landingpage">
+        <div>
+            @Html.Label("You are about to Crawl ") @System.Configuration.ConfigurationManager.AppSettings["baseDomainUrl"] @Html.Label(" forum")
+        </div>
+        <div>
+            @Html.Label("and  ") @System.Configuration.ConfigurationManager.AppSettings["targetWebUrl"] @Html.Label("  section")
+        </div>
+        <div>
+            @Html.Label("This service will crawl maximum of  ") 
+            @if (Convert.ToInt32(@System.Configuration.ConfigurationManager.AppSettings["maxRootWebsToCrawl"]) == 0)
+            {
+               @Html.Label("all levels")
+            }
+            else
+            {
+               @Html.Label(" ") @System.Configuration.ConfigurationManager.AppSettings["maxRootWebsToCrawl"]   @Html.Label("  levels")
+            }
+        </div>
+        <div style="text-align:center" class="startbutton">
+            <button class="btn btn-info crawl-button" id="#MyID" text="Start" title="Start the crawl"  onclick="return StartWebCrawl(this, 'Crawling...', 'Start');">Start</button>        
+        </div>
+        <div class="submit-progress hidden ">
+            <i class="fa fa-2x fa-spinner fa-spin"></i>
+            <label>Please wait while Crawling the Data...</label>
+        </div>
+
+    </div>
+   
+    <script type="text/javascript" language="javascript">
+       
+        function StartWebCrawl(ctl, msg, caption) {
+            $(ctl).prop("disabled", true).text(msg);
+            $("body").addClass("submit-progress-bg");
+            $(".submit-progress").removeClass("hidden");            
+            $.ajax({
+                url: '@Url.Action("BeginCrawl", "Crawler")',
+                data: null
+            }).done(function () {                
+                $(".submit-progress").addClass("hidden");
+                $(ctl).prop("disabled", false).text(caption);
+                window.location.href = "/ForumData/Home";
+                return true;
+               
+            });
+           
+        }
+    </script>

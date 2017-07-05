@@ -1,0 +1,51 @@
+﻿@model IEnumerable<UOA.ForumData.Core.KeywordStatistic>
+
+@{
+    ViewBag.Title = "KeywordBasedStatistics";
+}
+<!--Keyword statistics information page-->
+<h2>KeywordBasedStatistics</h2>
+
+    <div class="information" >
+        
+        <div><i class="fa fa-flag keywordstat" aria-hidden="true"></i></div>
+        <div class="content keywordstatcontent">
+            @Html.Label("Top") @System.Configuration.ConfigurationManager.AppSettings["maxKeyWordsToDisplay"]  @Html.Label("keywords matched after natural language processing")
+        </div>
+
+    </div>
+       
+    <div class="keywordstat-table">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Keyword</th>                   
+                    <th>Number of Forums</th>
+                    <th>Number of Questions</th>
+                    <th>Total Number of Occurences</th>
+                    <th>Read More</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td><span class="accordion-text keyword">@item.KeyWord</span></td>                       
+                        <td><span class="accordion-text keyword">@item.NumberOfForums</span></td>
+                        <td><span class="accordion-text keyword">@item.NumberOfQuestions</span></td>
+                        <td><span class="accordion-text keyword">@item.KeywordOccurences</span></td>
+                        <td>
+                            <button class="readmorebutton" type="button" value="Read more" onclick="location.href=
+                                '@Url.Action("KeywordDetails", "Display", new { key = item.KeyWord})'">
+                                <img src="~/Content/Images/readmore.gif" />
+                            </button>
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+
+    </div>
+

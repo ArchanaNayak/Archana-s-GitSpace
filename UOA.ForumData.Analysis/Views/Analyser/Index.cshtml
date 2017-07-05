@@ -1,0 +1,85 @@
+﻿@model IEnumerable<UOA.ForumData.Core.ForumDetail>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<!-- Forum Details page-->
+@using (Html.BeginForm("Index", "Crawler", FormMethod.Post))
+{    <div id="viewPlaceHolder" class="DetailsPage">
+        <table class="table">
+            <tr>
+                <th>
+                    Forum Name
+                </th>
+                <th>
+                    Forum Address
+                </th>
+                <th>
+                    No. of Questions
+                </th>
+                <th>
+                    No. of Responses
+                </th>
+                <th>
+                    Read More
+                </th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Url)
+                    </td>
+                    <td>
+                        <div class="question-count">
+                            @{
+                                var countStr = item.Questions.Count.ToString();
+                            }
+                            @Html.Label(countStr)
+                        </div>
+                    </td>
+                    <td>
+
+                        <input type="button" id="collapse-expand-button" onclick="Showcolumn(this, 'containerId')" value="Show More">
+
+                        <div id="containerId" class="containerDiv">
+                            @for (int i = 0; i < item.Questions.Count(); i++)
+                            {
+                                var str = "Question " + (i + 1) + " has " + item.Questions[i].Replies.Count.ToString() + " replies";
+                                <div class="question-reply-count">@Html.Label(str.ToString())</div>
+                            }
+                        </div>
+                    </td>
+                    <td>
+                        <button class="readmorebutton" type="button" value="Read more" onclick="location.href='@Url.Action("ReadmoreContent", "Display", new { forumId = item.ForumDetailID})'">
+                            <img src="~/Content/Images/readmore.gif" />
+                        </button>
+                    </td>
+                </tr>
+              }
+        </table>
+    </div>
+}
+
+
+@section MyScripts{
+    <script type="text/javascript">
+    function Showcolumn(clickedButton, containerId) {
+        var item = $(clickedButton).parent().find("#" + containerId)[0];
+        if (item) {
+            $(item).slideToggle(500, function () {
+                $(clickedButton).text(function () {
+                    //change text based on condition
+                    return $(item).is(":visible") ? "1" : "2";
+                });
+            });
+        }
+    }
+    </script>
+}
